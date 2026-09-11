@@ -1,0 +1,6 @@
+{
+  "name": "PM & RFI Tracking System",
+  "description": "專案管理與 RFI (Request for Information) 追蹤系統，整合視覺化看板、工程疑義生命週期審查、剪貼簿圖片直接貼上與檔案附件管理。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

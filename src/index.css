@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+   NEWSPRINT DESIGN SYSTEM - THE PROJECT CHRONICLE
+   Pure light mode, zero border radius, high information density,
+   sharp collapsed grid borders, Playfair Display + Lora + Mono
+---------------------------------------------------------------- */
+
+@layer base {
+  :root {
+    --bg-paper: #F9F9F7;
+    --ink-black: #111111;
+    --divider-grey: #E5E5E0;
+    --editorial-red: #CC0000;
+  }
+
+  /* Universal zero border-radius enforcement */
+  *, *::before, *::after {
+    border-radius: 0px !important;
+  }
+
+  body {
+    background-color: #F9F9F7;
+    color: #111111;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23111111' fill-opacity='0.035' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Typographic families */
+.font-serif {
+  font-family: 'Playfair Display', 'Noto Serif TC', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'Lora', 'Noto Serif TC', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Sharp Corners Enforcement Class */
+.sharp-corners {
+  border-radius: 0px !important;
+}
+
+/* Hard Offset Shadows (Newspaper Cutout Effect) */
+.hard-shadow {
+  box-shadow: 4px 4px 0px 0px #111111;
+}
+
+.hard-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #111111;
+}
+
+.hard-shadow-lg {
+  box-shadow: 6px 6px 0px 0px #111111;
+}
+
+.hard-shadow-hover {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.hard-shadow-hover:hover {
+  box-shadow: 4px 4px 0px 0px #111111;
+  transform: translate(-2px, -2px);
+}
+
+/* Section Texture: Fine graph overlay */
+.newsprint-texture {
+  position: relative;
+}
+
+.newsprint-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(0deg, transparent 98%, rgba(17, 17, 17, 0.025) 100%),
+    linear-gradient(90deg, transparent 98%, rgba(17, 17, 17, 0.025) 100%);
+  background-size: 4px 4px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Halftone radial pattern for image/document placeholders */
+.halftone-bg {
+  background-image: radial-gradient(#111111 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.12;
+}
+
+/* Editorial Drop Cap */
+.drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  float: left;
+  margin-right: 0.5rem;
+  padding: 2px;
+  font-weight: 900;
+  color: #111111;
+}
+
+/* Newsprint Input Style */
+.newsprint-input {
+  border: none;
+  border-bottom: 2px solid #111111;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #111111;
+  border-radius: 0px !important;
+  transition: background-color 0.15s ease;
+}
+
+.newsprint-input:focus {
+  outline: none;
+  background-color: #F0F0EE;
+  border-bottom: 2px solid #111111;
+}
+
+/* Editorial Horizontal Ticker Animation */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Sharp scrollbars for newspaper editorial tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #E5E5E0;
+}
+::-webkit-scrollbar-thumb {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
